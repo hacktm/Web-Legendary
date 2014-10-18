@@ -25,11 +25,12 @@ function action_login() {
 	    	self.session.user = user;
 	    	self.view('login',self.session.user);		
 
-	    });    
-	    console.log('no auth');
+	    });	    
 	}
-    
-    self.view('login',self.session.user);
+    else
+    {
+    	self.view('login',self.session.user);
+    }
     
 }
 
