@@ -7,3 +7,7 @@ INSTALL('module', 'https://modules.totaljs.com/webcounter/v1.00/webcounter.js', 
 
 // A simple DDOS protection
 INSTALL('module', 'https://modules.totaljs.com/ddos/v1.00/ddos.js');
+
+//Session module
+var options = {};
+INSTALL('module', 'https://modules.totaljs.com/session/v1.00/session.js', options);
