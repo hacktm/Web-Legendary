@@ -15,49 +15,49 @@ exports.uninstall = function(framework, options) {
 
 function action_login() {
 
-	/************************************
-	* @TODO: 
-	* - de facut un midleware sau ceva pt a sanitiza valorile venite din post,get,put etc
-	*
-	*************************************/
+    /************************************
+     * @TODO:
+     * - de facut un midleware sau ceva pt a sanitiza valorile venite din post,get,put etc
+     *
+     *************************************/
     var self = this;
 
     var email = self.post.email;
     var pass  = self.post.pass;
-    
-    if(!self.session.user)
-   	{
-	    var model_login = self.model('login');
-	    if(model_login)
-	    model_login.authenticate(email,pass,function(user){ 	    	   	
-	    	self.session.user = user;
-	    	self.view('login',self.session.user);		
 
-	    });	    
-	}
+    if(!self.session.user)
+    {
+        var model_login = self.model('login');
+        if(model_login)
+            model_login.authenticate(email,pass,function(user){
+                self.session.user = user;
+                self.view('login',self.session.user);
+
+            });
+    }
     else
     {
-    	self.view('login',self.session.user);
+        self.view('login',self.session.user);
     }
-    
+
 }
 
 function action_register() {
     var self = this;
 
     var params ={
-    	email : self.post.email,
-    	pass  : self.post.pass,
-    	type  : self.post.type
+        email : self.post.email,
+        pass  : self.post.pass,
+        type  : self.post.type
     }
 
-	var model_login = self.model('login');
-	model_login.register(params,function(resp){    	
-		
-		//@TODO de facut trimitere de mail pt validare
-		self.view('register',resp);		
+    var model_login = self.model('login');
+    model_login.register(params,function(resp){
 
-	});	    
+        //@TODO de facut trimitere de mail pt validare
+        self.view('register',resp);
+
+    });
 }
 
 
