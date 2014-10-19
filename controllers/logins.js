@@ -64,19 +64,26 @@ function action_logout() {
 function action_register() {
     var self = this;
 
-    var params ={
-        email : self.post.email,
-        pass  : self.post.pass,
-        type  : self.post.type
+    if(self.post && self.post.email)
+    {
+        var params = {
+            email: self.post.email,
+            pass: self.post.pass,
+            type: self.post.type
+        }
+
+        var model_login = self.model('login');
+        model_login.register(params, function (resp) {
+
+            //@TODO de facut trimitere de mail pt validare
+            self.view('register', resp);
+
+        });
     }
-
-    var model_login = self.model('login');
-    model_login.register(params,function(resp){
-
-        //@TODO de facut trimitere de mail pt validare
-        self.view('register',resp);
-
-    });
+    else
+    {
+        self.view('register');
+    }
 }
 
 
