@@ -1,9 +1,9 @@
 exports.install = function(framework) {
-    framework.route('/login', action_login,['#categories']);
-    framework.route('/login', action_login,['#categories','post']); // s-ar putea sa avem nevoie de xhr
-    framework.route('/register', action_register,['#categories']);
-    framework.route('/register', action_register,['#categories','post']); // s-ar putea sa avem nevoie de xhr
-    framework.route('/recover-password', action_recover_password,['#categories']);
+    framework.route('/login', action_login,['#categories','#judete']);
+    framework.route('/login', action_login,['#categories','#judete','post']); // s-ar putea sa avem nevoie de xhr
+    framework.route('/register', action_register,['#categories','#judete']);
+    framework.route('/register', action_register,['#categories','#judete','post']); // s-ar putea sa avem nevoie de xhr
+    framework.route('/recover-password', action_recover_password,['#categories','#judete']);
 
 };
 
