@@ -7148,3 +7148,27 @@ h4.panel-title a:hover:after, ol.breadcrumb a:hover:after, a.btn-advanced-search
 input, textarea, select: {
   outline: none;
 }
+
+h4.panel-title a:hover, ol.breadcrumb a:hover , a.btn-advanced-search:hover, .text-right.show-more a:hover {
+    color: #E4B21E;
+}
+
+h4.panel-title a:after, ol.breadcrumb a:after, a.btn-advanced-search:after, .text-right.show-more a:after {
+    background: #E4B21E;
+}
+
+.userauth{
+    display: inline-block;
+    position: absolute;
+    right: 35px;
+    top: 10px;
+    font-size: 12px;
+    color:#777;
+    line-height: 71px;
+}
+.logo{
+    width:100%;
+}
+.userauth span{
+    color:#E4B21E;
+}

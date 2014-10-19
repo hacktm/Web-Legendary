@@ -297,3 +297,8 @@ select.category{
   -moz-appearance: none;
   appearance: none;
 }
+
+.noborder:after{
+    border: none;
+    display: none;
+}

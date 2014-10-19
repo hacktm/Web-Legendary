@@ -4,7 +4,7 @@
     <li><a href="/mesteri/view-all">Mesteri</a></li>
   </ol>
   <h2>Mesteri</h2>
-  <div class="well well-sm" style="padding: 0; background-color: #FCF8E3;">
+  <div class="well well-sm" style="">
     <div class="row top-classifieds">
       <div class="col-md-2 top-classified">
         <label>Judet</label>
@@ -16,7 +16,7 @@
             	<option>@{judet.nume}</option>
             @{end}
           </select>
-          <input class="visibleInput" id="test-f" name="test" value="alege"></input>
+          <input class="visibleInput" id="test-f" name="test" value="- Selecteaza -"></input>
         </div>
       </div>
       <div class="col-md-2 top-classified">
@@ -29,12 +29,15 @@
             	<option>@{cat.nume}</option>
             @{end}
           </select>
-          <input class="visibleInput" id="test-f" name="test" value="alege"></input>
+          <input class="visibleInput" id="test-f" name="test" value="- Selecteaza -"></input>
         </div>
       </div>
       <div class="col-md-3 top-classified">
-        <button class="filter-button">Filter</button>
+          <div class="customSelect noborder">
+              <button class="filter-button btn btn-danger btn-sm btn-search">Filtreaza</button>
+          </div>
       </div>
+
     </div>
   </div>
   <div class="row classifieds-table">
