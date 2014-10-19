@@ -70,3 +70,24 @@ exports.register = function(params,handler)
 
 	return;
 }
+
+exports.recover_password = function(email,handler) {
+
+
+    var sql = "SELECT * FROM logins WHERE email='"+email+"' activ=1 LIMIT 1";
+
+    connection.query(sql, function(err, rows, fields) {
+        if (err) throw err;
+        if(rows && rows.lentgh >0 && handler)
+        {
+            handler(rows[0]);
+        }
+        else
+        {
+            handler();
+        }
+
+    });
+
+    return;
+};

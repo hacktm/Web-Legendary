@@ -1,21 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
     @{meta}
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=1024, user-scalable=yes" />
     <meta name="robots" content="all,follow" />
     @{head}
-    @{css('default.css')}
+
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     @{js('default.js')}
     @{favicon('favicon.ico')}
+
+    <meta charset="utf-8">
+
+    <meta property="og:description" content="Un instalator sau electrician de incredere greu de gasit? Mestereste.ro va ofera solutia.">
+    <meta property="og:title" content="vdi-thin-clients">
+    <meta name="twitter:description" content="Un instalator sau electrician de incredere greu de gasit? Mestereste.ro va ofera solutia.">
+    <meta name="twitter:title" content="mestereste.ro">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon_iphone.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon_ipad.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon_retina.png">
+
+    <!--[if lt IE 9]>
+    <script src="https://static.hsappstatic.net/content_shared_assets/static-1.3833/js/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width">
+    @{css('bootstrap.css')}
+    @{css('czsale.css')}
+    @{css('czsale-responsive.css')}
+
 </head>
 <body>
+<div class="container wrapper">
+<!-- Logo -->
+<div class="logo">
+    <a href="index.html"><img src="/img/logo.png"></a>
+</div>
+<!-- /Logo -->
+<!-- Static navbar -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#czsale-navbar">
+            <span class="sr-only">Meniu Principal</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="czsale-navbar">
+        <a href="addClassified.html" class="btn btn-success navbar-btn add-classified-btn navbar-left" role="button">Adauga lucrare</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mester <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Electricieni</a></li>
+                    <li><a href="addClassified.html">Zidari</a></li>
+                    <li><a href="category.html">Zugravi</a></li>
+                    <li><a href="detail.html">Sudor</a></li>
+                    <li><a href="conditions.html">Instalator</a></li>
+                </ul>
+            </li>
+            <li><a href="help.html">Ajuta-ma</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="conditions.html">Termeni si conditii</a></li>
+            <li><a href="signUp.html">Sign Up</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logheaza-te <b class="caret"></b></a>
+                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                    <li>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputEmail2">Email</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputPassword2">Parola</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Aminteste-ti de mine
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success btn-block">Autentifica-ma</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- /Static navbar -->
+<!-- Content -->
+<div class="row content">
+    <div class="col-lg-3 content-left">
+        <h4>Cauta</h4>
+        <div class="well well-sm">
+            <form>
+                <fieldset>
+                    <input type="text" class="form-control" />
+                    <small><a href="#" class="btn-advanced-search">Avansat</a></small>
+                    <input type="submit" class="btn btn-danger btn-sm btn-search" value="Search" />
+                </fieldset>
+            </form>
+        </div>
+        <h4>Categories</h4>
+        <div class="list-group categories">
+            <a href="#" class="list-group-item">Electricieni <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a href="#" class="list-group-item"> Zidari <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a href="#" class="list-group-item"> Zugravi <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a href="#" class="list-group-item">Sudori <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a href="#" class="list-group-item">Instalatori <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+        <h4>Newest classifieds</h4>
+        <div class="newest-classifieds">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" style="width: 64px; height: 64px;" src="http://placehold.it/64x64/e0e0e0" />
+                </a>
+                <div class="media-body">
+                    <p><a href="#"><strong>Samsung Galaxy S4</strong></a></p>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel ...</p>
+                </div>
+            </div>
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" style="width: 64px; height: 64px;" src="http://placehold.it/64x64/e0e0e0" />
+                </a>
+                <div class="media-body">
+                    <p><a href="#"><strong>Vizio 60" Slim Frame 3D LED</strong></a></p>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel ...</p>
+                </div>
+            </div>
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" style="width: 64px; height: 64px;" src="http://placehold.it/64x64/e0e0e0" />
+                </a>
+                <div class="media-body">
+                    <p><a href="#"><strong>Apple McBook Pro</strong></a></p>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel ...</p>
+                </div>
+            </div>
+            <p class="text-right show-more"><a href="#">More &rarr;</a></p>
+        </div>
+    </div>
+    <div class="col-lg-9 content-right">
+        @{body}
+    </div>
+</div>
+<!-- /Content -->
+<div class="footer">
+    <div class="well well-sm">
+        <div class="pull-right">
+            <ul class="nav nav-pills">
+                <li><a href="help.html">Ajuta-ma</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="conditions.html">Termeni si conditii</a></li>
+            </ul>
+        </div>
+        <div class="clearfix">&nbsp;</div>
+    </div>
+    <div class="pull-right">
+        <p class="text-muted"><small>Mestereste.ro- All Rights Reserved.</small></p>
+    </div>
+</div>
+</div>
+<!-- JS -->
 
-    @{body}
+@{js('jquery-1.10.2.min.js')}
+@{js('bootstrap.min.js')}
+@{js('respond.min.js')}
+@{js('jquery.slides.min.js')}
 
+<script>
+    $( document ).ready(function() {
+        // Drop down menu handler
+        $('.dropdown-menu').find('form').click(function (e) {
+            e.stopPropagation();
+        });
+        // Slider
+        $("#slides").slidesjs({
+            width: 900,
+            height: 300,
+            navigation: false,
+            play: {
+                active: false,
+                effect: "slide",
+                interval: 4000,
+                auto: true,
+                swap: false,
+                pauseOnHover: true,
+                restartDelay: 2500
+            }
+        });
+    });
+</script>
+<!-- /JS -->
 </body>
 </html>

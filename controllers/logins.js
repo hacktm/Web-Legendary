@@ -48,7 +48,6 @@ function action_register() {
     	pass  : self.post.pass,
     	type  : self.post.type
     }
-    
 
 	var model_login = self.model('login');
 	model_login.register(params,function(resp){    	
@@ -60,7 +59,15 @@ function action_register() {
 }
 
 
-function action_recover_password(hash) {
+function action_recover_password() {
     var self = this;
+    var email = self.post.email;
 
+    var model_login = self.model('login');
+    model_login.recover_password(email,function(resp){
+
+        //@TODO de facut trimitere de mail pt recuperare parola daca vine resp cu success
+        self.view('recover-password');
+
+    });
 }
