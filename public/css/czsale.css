@@ -302,3 +302,8 @@ select.category{
     border: none;
     display: none;
 }
+
+.custom-filter-btn
+{
+    margin-top: 24px;
+}
