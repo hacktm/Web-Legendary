@@ -1,0 +1,90 @@
+
+          <ol class="breadcrumb">
+            <li><a href="/">Mestereste.ro</a></li>
+            <li><a href="/adauga-lucrare">Adauga Lucrare</a></li>
+          </ol>
+          <h2>Adauga Lucrare</h2>
+          <p>Ai ceva ce trebuie reparat? Ai nevoie de ajutor cu acoperisul casei tale? Indiferent care este motivul, intra in contact cu un specialist.</p>
+          <hr>
+          <form role="form">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Lucrare</h3>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <label for="section1">Domeniu</label>
+                  <select id="section1" class="form-control">
+                    <option>- Selecteaza -</option>
+                    @{foreach cat in repository.categorii}
+                      <option>@{cat.nume}</option>
+                    @{end}
+                  </select>
+                </div>
+                
+              </div>
+            </div>
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Detalii</h3>
+              </div>
+              <div class="panel-body">
+                
+              
+                <div class="form-group">
+                  <label for="heading">Titlu</label>
+                  <input type="text" class="form-control" id="heading" placeholder="eg. Renovez bucataria ...">
+                </div>
+                <div class="form-group">
+                  <label for="text">Detalii</label>
+                  <textarea id="text" class="form-control" rows="8"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Buget</label>
+                  <div class="form-inline">
+                    <div class="form-group">
+                      <div class="input-group" style="width: 150px;">
+                        <input type="text" class="form-control" id="price">
+                        <span class="input-group-addon">RON</span>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+            
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Detalii personale</h3>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <label for="userName">Numele tau</label>
+                  <input type="text" class="form-control" id="userName">
+                </div>
+                <div class="form-group">
+                  <label for="userPhone">Telefon</label>
+                  <input type="text" class="form-control" id="userPhone">
+                </div>
+                <div class="form-group">
+                  <label for="userEmail">Email</label>
+                  <input type="email" class="form-control" id="userEmail">
+                </div>
+                <div class="form-group">
+                  <label for="userPass">Parola</label>
+                  <input type="password" class="form-control" id="userPass">
+                </div>
+              </div>
+            </div>
+            <div class="well">
+              
+              <div class="checkbox">
+                <label><input type="checkbox"> Sunt de acord cu <a href="#">Termenii si Conditiile</a></label>
+              </div>
+              <button type="button" class="btn btn-success">Adauga</button>
+            </div>
+          </form>
+        </div>
+      
