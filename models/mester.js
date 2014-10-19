@@ -1,4 +1,4 @@
- 
+
 // important
 exports.name = 'mester';
 
@@ -27,8 +27,8 @@ exports.usage = function() {
 exports.getInfo = function(id, handler) {
 
 
-	var sql = "SELECT * FROM mesteri WHERE id='"+id+"' LIMIT 1";
-
+	var sql = "SELECT m.*,l.email,j.nume as nume_judet FROM mesteri as m left join logins as l on (m.user_id = l.id) left join judete as j on (m.judet_id = j.id) WHERE m.user_id='"+id+"'  LIMIT 1";
+	console.log(sql);
 	connection.query(sql, function(err, rows, fields) {
 	  if (err) throw err;
 	  if(handler)
@@ -41,10 +41,10 @@ exports.getInfo = function(id, handler) {
 	return;
 };
 
-exports.setInfo = function(user_id, nume, prenume, descriere, judet_id, oras, handler) {
+exports.setInfo = function(user_id, nume, prenume, descriere, judet_id, oras, telefon, handler) {
 
 
-	var sql = "UPDATE mesteri SET nume='" + nume + "', prenume='" + prenume + "', descriere='" + descriere + "', judet_id='" + judet_id + "', oras='" + oras + "' WHERE user_id='" + user_id + "' LIMIT 1";
+	var sql = "UPDATE mesteri SET nume='" + nume + "', prenume='" + prenume + "', descriere='" + descriere + "', judet_id='" + judet_id + "', oras='" + oras + "', telefon='" + telefon + "' WHERE user_id='" + user_id + "' LIMIT 1";
 
 	connection.query(sql, function(err, rows, fields) {
 	  if (err) throw err;
@@ -58,9 +58,9 @@ exports.setInfo = function(user_id, nume, prenume, descriere, judet_id, oras, ha
 	return;
 }
 
-exports.create = function(id, nume, prenume, descriere, judet_id, oras, rating, numar_voturi, handler) { 
+exports.create = function(id, nume, prenume, descriere, judet_id, oras, rating, numar_voturi, telefon, handler) { 
 
-	var sql = "INSERT INTO mesteri (nume,prenume,descriere,judet_id,oras,rating) VALUES ('" + nume + "', '" + prenume + "','" + descriere + "', '" + judet_id + "', '" + oras + "', '" + rating + "', '" + numar_voturi + "')";
+	var sql = "INSERT INTO mesteri (nume,prenume,descriere,judet_id,oras,rating) VALUES ('" + nume + "', '" + prenume + "','" + descriere + "', '" + judet_id + "', '" + oras + "', '" + rating + "', '" + numar_voturi + "', '" + telefon + "')";
 
 	connection.query(sql, function(err, rows, fields) {
 	  if (err) throw err;
