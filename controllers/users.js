@@ -1,6 +1,6 @@
 exports.install = function(framework) {
-    framework.route('/users/view/{id}', action_get_info);
-    framework.route('/users/edit/{id}', action_set_info, ['post']);
+    framework.route('/users/view/{id}', action_get_info,['#categories']);
+    framework.route('/users/edit/{id}', action_set_info, ['#categories','post']);
 
 };
 
