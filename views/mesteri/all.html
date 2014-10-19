@@ -12,7 +12,9 @@
           
           <select id="test" class="hiddenSelect category" name="test">
             <option selected>- Selecteaza -</option>
-
+			@{foreach judet in repository.judete}
+            	<option>@{judet.nume}</option>
+            @{end}
           </select>
           <input class="visibleInput" id="test-f" name="test" value="one"></input>
         </div>
