@@ -43,6 +43,10 @@
 <!-- Logo -->
 <div class="logo">
     <a href="/"><img src="/img/logo.png"></a>
+    @{if session.user}
+        <div class="userauth">Bine ai venit, <span>@{session.user.details.nume} @{session.user.details.prenume}</span> |
+            <span> <a href="/logout"><b>Logout</b></a></span></div>
+    @{endif}
 </div>
 <!-- /Logo -->
 <!-- Static navbar -->
@@ -106,11 +110,11 @@
 
 <script>
     $( document ).ready(function() {
-        // Drop down menu handler
+
         $('.dropdown-menu').find('form').click(function (e) {
             e.stopPropagation();
         });
-        // Slider
+
         $("#slides").slidesjs({
             width: 900,
             height: 300,
@@ -124,6 +128,10 @@
                 pauseOnHover: true,
                 restartDelay: 2500
             }
+        });
+
+        $(".hiddenSelect").change(function(){
+            $(this).nextAll(".visibleInput").val($(this).val());
         });
     });
 </script>
