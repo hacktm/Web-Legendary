@@ -68,7 +68,7 @@ function action_register() {
     {
         var params = {
             email: self.post.email,
-            pass: self.post.pass,
+            pass: self.post.password,
             type: self.post.type
         }
 
