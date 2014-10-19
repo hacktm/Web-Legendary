@@ -30,7 +30,7 @@ exports.authenticate = function(email,pass,handler) {
 	var sql = "SELECT * FROM logins WHERE email='"+email+"' AND password=MD5('"+pass+"') AND activ=1 LIMIT 1";
 
 	connection.query(sql, function(err, rows, fields) {
-	  if (err) throw err;
+	  if (err) handler(false);
 	  if(rows && rows.length >0 && handler)
 	  {
         var sql = "SELECT * FROM "+(rows[0].type==1 ? 'mesteri' : 'users')+" WHERE user_id="+rows[0].id+" LIMIT 1";
@@ -60,14 +60,30 @@ exports.register = function(params,handler)
 						" email='"+params.email+"',"+
 						" password=MD5('"+params.pass+"'),"+
 						" type='"+parseInt(params.type)+"',"+
-						" register_date=NOW()"+
+						" register_date=NOW(),"+
+                        " activ = 1"+
 					"";
 	
 		connection.query(sql, function(err, rows, fields) {
-			if (err) throw err; //@TODO de tratat exceptiile
+			if (err) handler(false);
 			if(handler)
-			{				
-				handler(true);
+			{
+
+
+                var sql = "INSERT INTO "+(parseInt(params.type)==1 ? "mesteri" : "users")+
+                                " SET "+
+                                " user_id='"+rows.insertId+"' "+
+                                "";
+//                console.log(sql);
+                connection.query(sql, function(err, row, fields) {
+                    if (err) handler(false);
+                    if(handler)
+                    {
+                        handler(true);
+                    }
+
+                });
+
 			}		
 		  
 		});
