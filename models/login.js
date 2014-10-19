@@ -31,7 +31,7 @@ exports.authenticate = function(email,pass,handler) {
 	
 	connection.query(sql, function(err, rows, fields) {
 	  if (err) throw err;
-	  if(rows && rows.lentgh >0 && handler)
+	  if(rows && rows.length >0 && handler)
 	  {	  	
 	  	rows[0].password = null;
 	  	handler(rows[0]);
@@ -78,7 +78,7 @@ exports.recover_password = function(email,handler) {
 
     connection.query(sql, function(err, rows, fields) {
         if (err) throw err;
-        if(rows && rows.lentgh >0 && handler)
+        if(rows && rows.length >0 && handler)
         {
             handler(rows[0]);
         }

@@ -108,55 +108,8 @@
 <!-- Content -->
 <div class="row content">
     <div class="col-lg-3 content-left">
-        <h4>Cauta</h4>
-        <div class="well well-sm">
-            <form>
-                <fieldset>
-                    <input type="text" class="form-control" />
-                    <small><a href="#" class="btn-advanced-search">Avansat</a></small>
-                    <input type="submit" class="btn btn-danger btn-sm btn-search" value="Search" />
-                </fieldset>
-            </form>
-        </div>
-        <h4>Categories</h4>
-        <div class="list-group categories">
-            <a href="#" class="list-group-item">Electricieni <span class="glyphicon glyphicon-chevron-right"></span></a>
-            <a href="#" class="list-group-item"> Zidari <span class="glyphicon glyphicon-chevron-right"></span></a>
-            <a href="#" class="list-group-item"> Zugravi <span class="glyphicon glyphicon-chevron-right"></span></a>
-            <a href="#" class="list-group-item">Sudori <span class="glyphicon glyphicon-chevron-right"></span></a>
-            <a href="#" class="list-group-item">Instalatori <span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-        <h4>Newest classifieds</h4>
-        <div class="newest-classifieds">
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" style="width: 64px; height: 64px;" src="http://placehold.it/64x64/e0e0e0" />
-                </a>
-                <div class="media-body">
-                    <p><a href="#"><strong>Samsung Galaxy S4</strong></a></p>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel ...</p>
-                </div>
-            </div>
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" style="width: 64px; height: 64px;" src="http://placehold.it/64x64/e0e0e0" />
-                </a>
-                <div class="media-body">
-                    <p><a href="#"><strong>Vizio 60" Slim Frame 3D LED</strong></a></p>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel ...</p>
-                </div>
-            </div>
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" style="width: 64px; height: 64px;" src="http://placehold.it/64x64/e0e0e0" />
-                </a>
-                <div class="media-body">
-                    <p><a href="#"><strong>Apple McBook Pro</strong></a></p>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel ...</p>
-                </div>
-            </div>
-            <p class="text-right show-more"><a href="#">More &rarr;</a></p>
-        </div>
+        @{view('left_column')}
+
     </div>
     <div class="col-lg-9 content-right">
         @{body}
