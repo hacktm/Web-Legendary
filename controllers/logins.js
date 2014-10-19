@@ -1,6 +1,6 @@
 exports.install = function(framework) {
-    framework.route('/login', action_login,['post']);
-    framework.route('/register', action_register);
+    framework.route('/login', action_login,['post']); // s-ar putea sa avem nevoie de xhr
+    framework.route('/register', action_register,['post']); // s-ar putea sa avem nevoie de xhr
     framework.route('/recover-password', action_recover_password);
 
 };
@@ -13,6 +13,11 @@ exports.uninstall = function(framework, options) {
 
 function action_login() {
 
+	/************************************
+	* @TODO: 
+	* - de facut un midleware sau ceva pt a sanitiza valorile venite din post,get,put etc
+	*
+	*************************************/
     var self = this;
 
     var email = self.post.email;
@@ -21,21 +26,37 @@ function action_login() {
     if(!self.session.user)
    	{
 	    var model_login = self.model('login');
-	    model_login.authenticate(email,pass,function(user){    	
+	    if(model_login)
+	    model_login.authenticate(email,pass,function(user){ 	    	   	
 	    	self.session.user = user;
 	    	self.view('login',self.session.user);		
 
-	    });    
-	    console.log('no auth');
+	    });	    
 	}
-    
-    self.view('login',self.session.user);
+    else
+    {
+    	self.view('login',self.session.user);
+    }
     
 }
 
-function action_register(hash) {
+function action_register() {
     var self = this;
 
+    var params ={
+    	email : self.post.email,
+    	pass  : self.post.pass,
+    	type  : self.post.type
+    }
+    
+
+	var model_login = self.model('login');
+	model_login.register(params,function(resp){    	
+		
+		//@TODO de facut trimitere de mail pt validare
+		self.view('register',resp);		
+
+	});	    
 }
 
 

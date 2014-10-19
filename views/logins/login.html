@@ -1,3 +1,4 @@
 view login:
-
-@{model.email}
+@{if model}
+	@{model.email}
+@{endif}
