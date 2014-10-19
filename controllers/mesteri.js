@@ -1,6 +1,7 @@
 exports.install = function(framework) {
     framework.route('/mesteri/view/{id}', action_get_info);
     framework.route('/mesteri/edit/{id}', action_set_info, ['post']);
+    framework.route('/mesteri/view-all/', action_view_all );
     framework.route('/mesteri/view-all/{judet_id}', action_view_all, ['get']);
     framework.route('/mesteri/view-all/{judet_id}/{domeniu_id}', action_view_all, ['get']);
 
@@ -56,8 +57,9 @@ function action_view_all(judet_id, domeniu_id) {
     }
 
     mester.getAll(params, function(rows) {
+        // console.log(rows);
         self.view('all', rows);
-        console.log(rows);
+        
     });
     
 

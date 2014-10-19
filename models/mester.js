@@ -101,6 +101,7 @@ exports.getAll = function(params, handler) {
       if (err) throw err;
       if(handler)
 	  {
+	  	// console.log(rows);
 	  	handler(rows);
 	  }	
     }); 
