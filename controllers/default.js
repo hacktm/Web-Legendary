@@ -1,5 +1,5 @@
 exports.install = function(framework) {
-    framework.route('/', view_homepage,['#categories']);
+    framework.route('/', view_homepage,['#categories','#judete']);
 
     framework.use('session');
 };

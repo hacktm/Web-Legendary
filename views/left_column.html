@@ -10,9 +10,11 @@
 </div>
 <h4>Categories</h4>
 <div class="list-group categories">
+
     @{foreach cat in repository.categorii}
         <a href="/mesteri/view-all/0/@{cat.id}" class="list-group-item">@{cat.nume} <span class="glyphicon glyphicon-chevron-right"></span></a>
     @{end}
+
 </div>
 <h4>Newest classifieds</h4>
 <div class="newest-classifieds">

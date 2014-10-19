@@ -96,7 +96,7 @@ exports.getAll = function(params, handler) {
 	}
 
 	var sql = "SELECT * FROM mesteri as m " + join + where + limit;
-	console.log(sql);
+
     connection.query(sql, function(err, rows, fields) {
       if (err) throw err;
       if(handler)
