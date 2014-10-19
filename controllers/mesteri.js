@@ -20,10 +20,12 @@ function action_get_info(id) {
 
     var self = this;
 
-    var user = self.model('mester');
+    var mester = self.model('mester');
 
-    user.action_get_info(id, function(row) {
+    mester.getInfo(id, function(row) {
+        console.log(row);
         self.view('mester', row);
+
     })
     
 }
@@ -39,8 +41,9 @@ function action_set_info(id) {
     var descriere = self.post.descriere;
     var judet_id = self.post.judet_id;
     var oras = self.post.oras;
+    var telefon = self.post.telefon;
 
-    model_set_info.setInfo(id, nume, prenume, descriere, judet_id, oras);
+    model_set_info.setInfo(id, nume, prenume, descriere, judet_id, oras, telefon);
 
     self.view('edit');
 }

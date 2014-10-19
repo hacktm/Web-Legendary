@@ -1,0 +1,56 @@
+
+          <ol class="breadcrumb">
+            <li><a href="/">Mestereste.ro</a></li>
+            <li><a href="/mesteri/view-all">Mesteri</a></li>
+            
+            <li><a href="">@{model.nume} @{model.prenume}</a></li>
+          </ol>
+          <h2>@{model.nume} @{model.prenume}</h2>
+          <div class="row">
+            <div class="col-md-8">
+              <h4>Descriere</h4>
+              <p style="text-align: justify;">@{model.descriere}</p>
+              
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <span style="padding-left: 5px;"><strong>Contact:</strong></span>
+                  <div class="well">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <h4><a href="#">@{model.nume} @{model.prenume}</a></h4>
+                        <small>Rating: <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star-empty"></span></small> (@{model.numar_voturi} voturi)<br>
+                        <small>Locatie: <cite title="Prague, Czech Republic">@{model.oras}, @{model.nume_judet} <span class="glyphicon glyphicon-map-marker"></span></cite></small><br>
+                        <span class="glyphicon glyphicon-envelope"></span> @{model.email}<br>
+                        <span class="glyphicon glyphicon-phone-alt"></span> @{model.telefon}<br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </div>
+          
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Contacteaza acest mester:</h4>
+              <div class="panel panel-default">
+                <div class="panel-body">                
+                  <form action="#" method="POST">
+                    <div class="form-group">
+                      <label for="InputEmail">Email: </label>
+                      <input type="email" class="form-control" id="InputEmail" placeholder="Pune email-ul tau">
+                    </div>
+                    <div class="form-group">
+                      <label for="InputText">Mesaj: </label>
+                      <textarea class="form-control" id="InputText" name="message" placeholder="Scrie un mesaj..." rows="5" style="margin-bottom:10px;"></textarea>
+                    </div>
+                    <button class="btn btn-info" type="submit">Trimite</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        
