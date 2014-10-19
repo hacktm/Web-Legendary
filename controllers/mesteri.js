@@ -3,7 +3,7 @@ exports.install = function(framework) {
     
     framework.route('/mesteri/view/{id}', action_get_info,['#categories']);
     framework.route('/mesteri/edit/{id}', action_set_info, ['#categories','post']);
-    framework.route('/mesteri/view-all', action_get_info,['#categories']);
+    framework.route('/mesteri/view-all', action_view_all,['#categories']);
     framework.route('/mesteri/view-all/{judet_id}', action_view_all, ['#categories','get']);
     framework.route('/mesteri/view-all/{judet_id}/{domeniu_id}', action_view_all, ['#categories','get']);
 
