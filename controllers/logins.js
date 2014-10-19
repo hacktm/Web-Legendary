@@ -57,6 +57,8 @@ function action_logout() {
        self.session.user = null;
     }
 
+    self.view('logout');
+
 }
 
 function action_register() {

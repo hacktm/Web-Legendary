@@ -7,21 +7,27 @@
   <div class="well well-sm" style="padding: 0; background-color: #FCF8E3;">
     <div class="row top-classifieds">
       <div class="col-md-2 top-classified">
+        <label>Judet</label>
         <div class="customSelect">
+          
           <select id="test" class="hiddenSelect category" name="test">
-            <option selected>one</option>
-            <option>two</option>
-            <option>three</option>
+            <option selected>- Selecteaza -</option>
+			@{foreach judet in repository.judete}
+            	<option>@{judet.nume}</option>
+            @{end}
           </select>
           <input class="visibleInput" id="test-f" name="test" value="one"></input>
         </div>
       </div>
       <div class="col-md-2 top-classified">
+        <label>Domeniu</label>
         <div class="customSelect">
+          
           <select id="test" class="hiddenSelect category" name="test">
-            <option selected>one</option>
-            <option>two</option>
-            <option>three</option>
+            <option selected>- Selecteaza -</option>
+            @{foreach cat in repository.categorii}
+            	<option>@{cat.nume}</option>
+            @{end}
           </select>
           <input class="visibleInput" id="test-f" name="test" value="one"></input>
         </div>

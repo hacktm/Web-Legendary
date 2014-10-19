@@ -1,11 +1,11 @@
 exports.install = function(framework) {
 
-    
     framework.route('/mesteri/view/{id}', action_get_info,['#categories','#judete']);
     framework.route('/mesteri/edit/{id}', action_set_info, ['#categories','#judete','post']);
-    framework.route('/mesteri/view-all', action_get_info,['#categories','#judete']);
+    framework.route('/mesteri/view-all', action_view_all,['#categories','#judete']);
     framework.route('/mesteri/view-all/{judet_id}', action_view_all, ['#categories','#judete','get']);
     framework.route('/mesteri/view-all/{judet_id}/{domeniu_id}', action_view_all, ['#categories','#judete','get']);
+
 
 
 };
