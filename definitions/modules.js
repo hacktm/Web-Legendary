@@ -10,6 +10,6 @@ INSTALL('module', 'https://modules.totaljs.com/ddos/v1.00/ddos.js');
 
 //Session module
 var options = {
-	timeout:'5 minutes'
+	timeout:'50 minutes'
 };
 INSTALL('module', 'https://modules.totaljs.com/session/v1.00/session.js', options);

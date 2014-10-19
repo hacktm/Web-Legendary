@@ -28,13 +28,18 @@ exports.authenticate = function(email,pass,handler) {
 
 
 	var sql = "SELECT * FROM logins WHERE email='"+email+"' AND password=MD5('"+pass+"') AND activ=1 LIMIT 1";
-	
+
 	connection.query(sql, function(err, rows, fields) {
 	  if (err) throw err;
 	  if(rows && rows.length >0 && handler)
-	  {	  	
-	  	rows[0].password = null;
-	  	handler(rows[0]);
+	  {
+        var sql = "SELECT * FROM "+(rows[0].type==1 ? 'mesteri' : 'users')+" WHERE user_id="+rows[0].id+" LIMIT 1";
+          connection.query(sql, function(err, row, fields) {
+              rows[0].password = null;
+              rows[0].details = row[0];
+              handler(rows[0]);
+          });
+
 	  }else
 	  {
 	  	handler();

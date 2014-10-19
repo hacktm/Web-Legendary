@@ -9,7 +9,7 @@ framework.on('load', function() {
         if (controller)
         {
             var model_categorie = controller.model('categorie');
-            console.log(controller.flags);
+
             model_categorie.getAll(function(rows){
                 controller.repository.categorii = rows;
                 next();
